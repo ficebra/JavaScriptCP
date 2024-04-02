@@ -1,21 +1,33 @@
 
 /* String Manipulation Functions */
+console.log("********* String Manipulation Functions ************");
 
     //Reverse a String
+    console.log("--Q1: Reverse a String");
+
+    var word = prompt("Q1-Reverse a String : Veuillez entrer un mot pour avoir son inverse");
     function reverseWord(word){
         var reverse = word.split('').reverse();
-        return reverse.join('');
+        console.log("Mot à inverser : "+word);
+        return "L'inverse du mot que vous avez entre est : "+reverse.join('');
     }
-    console.log(reverseWord("monde"));
+    console.log(reverseWord(word));
 
     //Count Characters
+    console.log("--Q2: Count Characters");
+
+    var word = prompt("Q2-Count Characters : Veuillez entrer un mot pour avoir le nombre de caracteres");
     function countWord(word){
         var count = word.split('').length;
-        return count;
+        console.log("Mot renseigne : "+word);
+        return "Le nombre de caracteres est de : "+count;
     }
-    console.log(countWord("monde"));
+    console.log(countWord(word));
 
     //Capitalize Words
+    console.log("--Q3: Capitalize Words");
+    
+    var expression = prompt("Q3-Capitalize Words : Veuillez entrer une expression ou une phrase");
     function capitalizeWord(expression){
         var result = expression.split(' ');
         var result2 = [];
@@ -24,24 +36,36 @@
             result2[i] = result[i].charAt(0).toUpperCase() + result[i].slice(1);
         }
 
-        return result2.join(' ');;
+        console.log("Expression ou phrase renseignee : "+expression);
+        return "Resultat de la fonction : "+result2.join(' ');;
     }
-    console.log(capitalizeWord("le coup du marteau"));
+    console.log(capitalizeWord(expression));
 
 /* End String Manipulation Functions */
 
 
 /* Array Functions */
+console.log("********* Array Functions ************");
 
-    //Max and Min
-    function maxMin(val){
-        var max = Math.max(val);
-        var min = Math.min(val);
-        return max, min;
+    //Find Maximum and Minimum
+    console.log("--Q1: Find Maximum and Minimum");
+
+    var val = prompt("Q1-Maximum and Minimum : Veuillez entrer des valeurs numeriques separees d'une virgule");
+    function maxMin(val = []){
+        var maximum = val[(val.length)-1];
+        for(i=0; i<val.length; i++){
+            if(val[i] > maximum){
+                maximum = val[i];
+            }
+        }
+        return "Maximum est : "+maximum;
     }
-    console.log(maxMin([4, 2, 3]));
+    console.log(maxMin(val));
+    // console.log(Math.max(val));
 
-    //Sum of array
+    //Sum of array66
+    console.log("--Q2: Sum of Array");
+    
     function sumArray(val){
 
         var sum = 0;
@@ -53,6 +77,7 @@
     console.log(sumArray([1,9,5]));
 
     //Filter array
+    console.log("--Q3: Filter array");
     var tabNumb = [18, 20, 11, 5, 90];
     var result = tabNumb.filter(filterArr);
     
@@ -64,18 +89,27 @@
 /* End Array Functions */
 
 /* Mathematical Functions */
+    console.log("********* Mathematical Functions ************");
 
     //Factorial
+    console.log("--Q1: Factorial");
+
+    var number = prompt("Q1-Factorial : Veuillez entrer un chiffre ou un nombre")
     function factoNumb(number){
         var factorial = 1;
         for(i = 1; i <= number; i++){
             factorial = factorial * i;
         }
-        return factorial;
+
+        console.log("Valeur renseignee : "+number)
+        return "La factoriel est : "+factorial;
     }
-    console.log(factoNumb(6));
+    console.log(factoNumb(number));
 
     //Prime Number Check
+    console.log("--Q2: Prime Number Check");
+    
+    var number = prompt("Q2-Prime Number Check : Veuillez entrer un chiffre ou un nombre");
     function primeNumber(number){
 
         var result = 0;
@@ -100,20 +134,33 @@
 
         return "Ces diviseurs sont : "+array;
     }
-    console.log(primeNumber(13));
+    console.log(primeNumber(number));
 
     //Fibonacci Sequence
+    console.log("--Q3: Fibonacci Sequence");
+    
+    var number = prompt("Q3-Fibonacci Sequence : Veuillez entrer un chiffre ou un nombre");
     function fibonacci(number){
 
-        var fibo = 0;
+        var fibo;
         var array = [];
 
-        for(i=2; i <= number; i++){
-            fibo = [(i-1) + (i-2)];
-            array.push(fibo);
+        for(i=0; i <= number; i++){
+            if(i === 0){
+                fibo = 0;
+                array.push(fibo);
+            } else if (i === 1){
+                fibo = 1;
+                array.push(fibo);
+            }
+            else {
+                fibo = array[i-1] + array[i-2];
+                array.push(fibo);
+            }
         }
-        return array;
+
+        return "La sequence de fibonacci de "+number+" est : "+array;
     }
-    console.log(fibonacci(10));
+    console.log(fibonacci(number));
     
 /* End Mathematical Functions */
