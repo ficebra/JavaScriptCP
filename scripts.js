@@ -47,34 +47,50 @@ console.log("********* String Manipulation Functions ************");
 /* Array Functions */
 console.log("********* Array Functions ************");
 
-    //Find Maximum and Minimum
-    console.log("--Q1: Find Maximum and Minimum");
+    //Find Maximum
+    console.log("--Q1: Find Maximum");
 
-    var val = prompt("Q1-Maximum and Minimum : Veuillez entrer des valeurs numeriques separees d'une virgule");
-    function maxMin(val = []){
+    var val = prompt("Q1-Find Maximum : Veuillez entrer des valeurs numeriques separees d'une virgule");
+    function max(val = []){
+
         var maximum = val[(val.length)-1];
-        for(i=0; i<val.length; i++){
+        for(i=0; i < val.length; i++){
             if(val[i] > maximum){
                 maximum = val[i];
             }
         }
-        return "Maximum est : "+maximum;
+        return "Le maximum est : "+maximum;
     }
-    console.log(maxMin(val));
-    // console.log(Math.max(val));
+    console.log(max(val));
+
+    //Find Minimum
+    console.log("--Q1: Find Minimum");
+
+    var val = prompt("Q1-Find Minimum : Veuillez entrer des valeurs numeriques separees d'une virgule");
+    function min(val = []){
+
+        var minimum = val[(val.length)-1];
+        for(i=0; i < val.length; i++){
+            if(val[i] < minimum){
+                minimum = val[i];
+            }
+        }
+        return "Le minimum est : "+minimum;
+    }
+    console.log(min(val));
 
     //Sum of array66
     console.log("--Q2: Sum of Array");
     
     function sumArray(val){
-
+        
         var sum = 0;
         for(i = 0; i < val.length; i++){
             sum += val[i];
         }
-        return sum;
+        return "La somme des valeurs entrees est :"+sum;
     }
-    console.log(sumArray([1,9,5]));
+    console.log(sumArray([9,8,5,4,6,3,2,1]));
 
     //Filter array
     console.log("--Q3: Filter array");
