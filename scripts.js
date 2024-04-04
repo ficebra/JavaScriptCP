@@ -51,7 +51,7 @@ console.log("********* Array Functions ************");
     console.log("--Q1: Find Maximum");
 
     var val = prompt("Q1-Find Maximum : Veuillez entrer des valeurs numeriques separees d'une virgule");
-    function max(val = []){
+    function valMax(val = []){
 
         var maximum = val[(val.length)-1];
         for(i=0; i < val.length; i++){
@@ -61,23 +61,23 @@ console.log("********* Array Functions ************");
         }
         return "Le maximum est : "+maximum;
     }
-    console.log(max(val));
+    console.log(valMax(val));
 
     //Find Minimum
     console.log("--Q1: Find Minimum");
 
     var val = prompt("Q1-Find Minimum : Veuillez entrer des valeurs numeriques separees d'une virgule");
-    function min(val = []){
+    function valMin(val){
 
         var minimum = val[(val.length)-1];
-        for(i=0; i < val.length; i++){
+        for(i = 0; i < val.length; i++){
             if(val[i] < minimum){
                 minimum = val[i];
             }
         }
         return "Le minimum est : "+minimum;
     }
-    console.log(min(val));
+    console.log(valMin(val));
 
     //Sum of array66
     console.log("--Q2: Sum of Array");
